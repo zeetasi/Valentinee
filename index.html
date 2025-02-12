@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine, Sayang ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ff99cc, #ff6699);
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow: hidden;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 45px;
+            text-shadow: 2px 2px 5px #ff0066;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 2px 2px 5px #ff0066; }
+            100% { text-shadow: 2px 2px 20px #ff0066; }
+        }
+
+        .love-message {
+            font-size: 22px;
+            font-weight: bold;
+            animation: slide 4s infinite alternate;
+        }
+
+        @keyframes slide {
+            from { transform: translateY(-10px); }
+            to { transform: translateY(10px); }
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .button {
+            background-color: #ff0066;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #cc0055;
+        }
+
+        .hidden-text {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: yellow;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .wa-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .wa-button:hover {
+            background-color: #1DA851;
+        }
+
+        .valentine-message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            line-height: 1.5;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Musik Autoplay -->
+    <audio autoplay loop>
+        <source src="https://www.mboxdrive.com/Lamunan-Jawa.mp3" type="audio/mp3">
+    </audio>
+
+    <h1>Happy Valentine, Sayang ❤️</h1>
+
+    <p class="valentine-message">
+        Sayangku, di hari yang spesial ini aku ingin mengungkapkan betapa berharganya kamu bagiku.  
+        Kamu bukan hanya sekadar seseorang yang aku sayangi, tapi kamu adalah bagian dari hidupku.  
+        Setiap detik bersamamu adalah kebahagiaan, setiap senyummu adalah sinar yang menerangi hariku.  
+        Aku ingin kita selalu bersama, menjalani setiap momen dengan cinta yang tulus.  
+        Aku berjanji akan selalu ada untukmu, mencintaimu, menjagamu, dan membuatmu bahagia.  
+        Happy Valentine, cinta! 💖💋  
+    </p>
+
+    <!-- Button kejutan -->
+    <button class="button" onclick="showSurprise()">Klik Aku 😘</button>
+
+    <p id="surprise-text" class="hidden-text">
+        "Aku mencintaimu lebih dari yang bisa aku ungkapkan dengan kata-kata. Kamu adalah takdirku, dan aku ingin bersamamu selamanya! 💖💍"
+    </p>
+
+    <!-- Tombol WhatsApp -->
+    <a class="wa-button" href="https://wa.me/6285762554515?text=Hai%20Sayang%20%F0%9F%92%96%2C%20Aku%20suka%20hadiah%20Valentine%20dari%20kamu!%20%F0%9F%92%95" target="_blank">
+        Balas Aku di WhatsApp 💌
+    </a>
+
+    <script>
+        function showSurprise() {
+            document.getElementById("surprise-text").style.display = "block";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
